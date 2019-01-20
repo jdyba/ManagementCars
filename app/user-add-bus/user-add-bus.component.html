@@ -1,0 +1,37 @@
+<div style="text-align:center">
+  <form appMyForm [formGroup]="addBusForm" (ngSubmit)="addBus()">
+    <input type="text" id="mark" formControlName="mark" placeholder="Podaj marke" >
+    <input type="text" id="model" formControlName="model" placeholder="Podaj model">
+    <input type="text" id="year" formControlName="year" placeholder="Podaj rok">
+    <input type="file" accept=".jpg, png." formControlName="photo" (change)="photoSelected($event)">
+    <br>
+    <button appButLog type="submit" [disabled]="!addBusForm.valid" >Add bus</button>
+  </form>
+</div>
+
+
+<div *ngIf="added" >
+    <div class="message" >
+        <h3 style="color:red;">you are not an admin</h3>
+        <h4>Show your buses below</h4>
+    </div>
+    <div>
+          <table id="buses">
+            <tr>
+              <th>Lp</th>
+              <th>Mark</th>
+              <th>Model</th>
+              <th>Year</th>
+              <th>Photo</th>
+            </tr>
+            <tr *ngFor="let bus of this.busList; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{bus.mark}}</td>
+                <td>{{bus.model}}</td>
+                <td>{{bus.year}}</td>
+                <img style="max-width: 150px;" src="{{bus.photoKey}}" alt="bus.model">
+            </tr>
+        </table>
+    </div>
+  </div>
+

@@ -1,0 +1,15 @@
+<div style="text-align:center">
+    <form appMyForm [formGroup]="addBusForm" (ngSubmit)="addBus()">
+      <input type="text" id="mark" formControlName="mark" placeholder="Podaj marke" >
+      <input type="text" id="model" formControlName="model" placeholder="Podaj model">
+      <input type="text" id="year" formControlName="year" placeholder="Podaj rok">
+      <input type="file" accept=".png" formControlName="photo" (change)="photoSelected($event)">
+      <br>
+      <button appButLog type="submit" [disabled]="!addBusForm.valid" >Add bus</button>
+    </form>
+
+    <h4 style="color: rgb(155, 13, 13)" *ngIf="added">Added new bus</h4>
+</div>
+
+
+

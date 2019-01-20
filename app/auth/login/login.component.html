@@ -1,0 +1,10 @@
+<form appMyForm (ngSubmit)="login(formData)" #formData="ngForm">
+    <input ngModel type="email" name="email" placeholder="E-mail" required >
+    <input ngModel type="password" name="password" placeholder="Password" required>
+    <br>
+    <button appButLog *ngIf="!authService.user" type="submit" [disabled]="formData.invalid">Log in</button>
+    <span style="cursor:pointer" (click)="forgotPass(formData)">Forgot password?</span>
+    <button appButLog *ngIf="!authService.user" (click)="signInGoogle()">Log in with google</button>
+</form>
+
+<span style="display: block">{{this.authService.posMessage}}</span>

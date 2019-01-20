@@ -1,0 +1,43 @@
+#buses {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#buses td, #buses th {
+  border: 1px solid #8a7e7e;
+  padding: 8px;
+}
+
+#buses tr {
+  background-color: rgb(231, 231, 231);
+}
+
+#buses tr:nth-child(even) {
+  background-color: rgb(209, 208, 208);
+}
+
+#buses tr:hover {
+  background-color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+
+#buses th {
+  text-align: left;
+  color:white;
+  background-color: rgb(139, 52, 52);
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+
+.message {
+  margin:10px;
+  padding: 10px;
+  background-color: white;
+  text-transform: uppercase;
+  border-radius: 20px;
+  width:400px;
+}
+
+

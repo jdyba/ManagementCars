@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Save your bus</h2>
+  <h4 style="color: rgb(155, 13, 13)" *ngIf="authService.user">Zalogowano: {{authService.user.email}}</h4>
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/buses" routerLinkActive="active">Buses</a>
+    <a routerLink="/addBus" routerLinkActive="active">Add bus</a>
+    <a *ngIf="!this.authService.user" routerLink="/auth" routerLinkActive="active">Log in</a>
+    <a style="border-radius: 5px;" *ngIf="this.authService.user" (click)="logout()">Log out</a>
+  </nav>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,6 @@
+<form appMyForm (ngSubmit)="signUp(formData)" #formData="ngForm">
+    <input ngModel type="email" name="email" placeholder="E-mail" required>
+    <input ngModel type="password" name="password" placeholder="Password" required>
+    <br>
+    <button appButLog *ngIf="!protect" type="submit" [disabled]="formData.invalid">Sign in</button>
+</form>

@@ -1,0 +1,8 @@
+<div style="text-align: center">
+  <h3>{{info}}</h3>
+    <button appButMid routerLinkActive="active" [routerLink]="'login'">Log in</button>
+    <button appButMid routerLinkActive="active"  [routerLink]="'sign'">Sign in</button>
+  <h4 style="color: rgb(155, 13, 13)" >{{this.authService.errMessage}}</h4>
+  <router-outlet></router-outlet>
+</div>
+

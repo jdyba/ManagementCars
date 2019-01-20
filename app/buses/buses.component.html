@@ -1,0 +1,23 @@
+<table id="buses">
+    <tr>
+      <th>Lp</th>
+      <th>Mark</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Photo</th>
+    </tr>
+    <tr *ngFor="let bus of buses; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{bus.mark}}</td>
+        <td>{{bus.model}}</td>
+        <td>{{bus.year}}</td>
+        <td *ngIf="this.images !== undefined && bus.photoKey !== ''; else noPhoto">
+            <img [src]="this.getImage(bus)" alt="bus.model">
+        </td>
+        <ng-template #noPhoto><td>No photo</td> </ng-template>
+    </tr>
+</table>
+
+
+
+
